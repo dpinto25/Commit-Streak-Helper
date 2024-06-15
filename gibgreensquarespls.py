@@ -18,7 +18,7 @@ import schedule
 import time
 
 # Configuration
-FILE_TO_COPY = 'copiablefile.txt' # pretty self explanatory name no? jesus
+FILE_TO_COPY = 'copiablefile.py' # pretty self explanatory name no? jesus
 DESTINATION_FOLDER = './' # For organizational purposes xD
 NUMBER_OF_COPIES = 50 # 50 copies of the file, cuz why not? greener squares gonna green
 COMMIT_MESSAGE = 'update' # again - pretty self explanatory stuff mate. why you even reading this description?
