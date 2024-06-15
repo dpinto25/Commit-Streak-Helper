@@ -24,7 +24,7 @@ NUMBER_OF_COPIES = 50 # 50 copies of the file, cuz why not? greener squares gonn
 COMMIT_MESSAGE = 'update' # again - pretty self explanatory stuff mate. why you even reading this description?
 LOG_FILE = 'log.txt' # if you're reading this i hope you have a nice day 
 REMOTE_NAME = 'origin' 
-REMOTE_URL = 'https://github.com/dpinto25/AutoGit.git' # if your posting an issue and the issue is because you didn't change this line, you're getting blocked.
+REMOTE_URL = 'https://github.com/YOUR_GITHUB/YOUR_REPO.git' # if your posting an issue and the issue is because you didn't change this line, you're getting blocked.
 
 # generate a random file name
 def generate_random_filename():
