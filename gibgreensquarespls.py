@@ -30,7 +30,7 @@ REMOTE_URL = 'https://github.com/YOUR_GITHUB/YOUR_REPO.git' # if your posting an
 def generate_random_filename():
     return ''.join(random.choices(string.ascii_lowercase, k=20)) + '.txt'
 
-# delete half of the .txt files if thers too many
+# delete half of the .txt files if there is too many
 def check_if_theres_more_than_105_and_if_so_just_delete_half_of_them_btw_do_you_like_this_function_name_lol(log):
     txt_files = [f for f in os.listdir(DESTINATION_FOLDER) if f.endswith('.txt')] # thanks chatgpt for fixing this line lol
     
