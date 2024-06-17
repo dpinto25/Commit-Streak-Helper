@@ -33,7 +33,7 @@ def generate_random_filename():
 
 # delete half of the .txt files if thers too many
 def check_if_theres_more_than_105_and_if_so_just_delete_half_of_them_btw_do_you_like_this_function_name_lol(log):
-    txt_files = [f for f in os.listdir(DESTINATION_FOLDER) if f.endswith('.txt')] # thanks chatgpt for fixing this line lol
+    txt_files = [f for f in os.listdir(DESTINATION_FOLDER) if f.endswith('.txt') and f != 'log.txt'] # thanks chatgpt for fixing this line lol
     
     if len(txt_files) > 105:
         files_to_delete = len(txt_files) // 2
