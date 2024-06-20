@@ -19,11 +19,11 @@ import time
 
 # Configuration
 FILE_TO_COPY = 'copiablefile.py' # pretty self explanatory name no? jesus
-DESTINATION_FOLDER = './' # For organizational purposes xD
+DESTINATION_FOLDER = './' # self explanatory lol
 NUMBER_OF_COPIES = 50 # 50 copies of the file, cuz why not? greener squares gonna green
-COMMIT_MESSAGE = 'update' # again - pretty self explanatory stuff mate. why you even reading this description?
-LOG_FILE = 'log.txt' # if you're reading this i hope you have a nice day 
-REMOTE_NAME = 'origin' 
+COMMIT_MESSAGE = 'update' # self explanatory lol
+LOG_FILE = 'log.txt' # self explanatory lol
+REMOTE_NAME = 'origin'  # self explanatory lol
 REMOTE_URL = 'https://github.com/YOUR_GITHUB/YOUR_REPO.git' # if your posting an issue and the issue is because you didn't change this line, you're getting blocked.
 TIMER = 12 # do the shit every 12 hours 
 
@@ -48,7 +48,7 @@ def check_if_theres_more_than_105_and_if_so_just_delete_half_of_them_btw_do_you_
                 log.write(f'Error removing file {file_to_delete}: {e}\n')
                 print(f'Error removing file {file_to_delete}: {e}\n')
 
-# copy the file multiple times with random names
+# copy the file NUMBER_OF_COPIES times
 def copy_file(log):
     for _ in range(NUMBER_OF_COPIES):
         dest_file = os.path.join(DESTINATION_FOLDER, generate_random_filename())
@@ -60,7 +60,7 @@ def copy_file(log):
             log.write(f'Error copying file: {e}\n')
             print(f'Error copying file: {e}\n')
 
-# commit changes to git
+# commit changes
 def commit_togit(log):
     try:
         subprocess.run(['git', 'add', '.'], check=True, stdout=log, stderr=log) #leave logs here cuz if this shit goes wrong you won't know - same for lines below
@@ -72,9 +72,9 @@ def commit_togit(log):
         log.write(f'Error during Git operations: {e}\n')
         print(f'Error during Git operations: {e}\n')
 
-# the shit to be done
+# what do
 def do_the_shit():
-    with open(LOG_FILE, 'a') as log:  # log the shit, dont log the shit, who cares? :shrugs:
+    with open(LOG_FILE, 'a') as log:  
         log.write('\nCopying files and comitting\n')
         check_if_theres_more_than_105_and_if_so_just_delete_half_of_them_btw_do_you_like_this_function_name_lol(log)
         copy_file(log)
@@ -82,15 +82,14 @@ def do_the_shit():
         log.write('Completed.\n')
         print('Commit Completed')
 
-# display a countdown timer
+#countdown timer
 def countdown_timer(hours):
     for remaining in range(hours, 0, -1):
         print(f'{remaining} hours until the next commit.')
         time.sleep(3600) # goodnight mf
 
-# main function & schedule the task
-def main():
-    schedule.every(TIMER).hours.do(do_the_shit)
+# main
+def main():    schedule.every(TIMER).hours.do(do_the_shit)
     print('Changes commited and timer Started. 24 hours left for next commit')
 
     while True:
@@ -98,5 +97,5 @@ def main():
         countdown_timer(TIMER)
 
 if __name__ == "__main__":
-    do_the_shit()  # run the task at startup ? sure why not, an extra commit a day keeps the doctor away
+    do_the_shit()  # remove to not do a commit on startup of the script
     main()
